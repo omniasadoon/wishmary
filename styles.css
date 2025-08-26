@@ -1,0 +1,484 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Potta+One&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "opacity",serif;
+body{
+    background-color: rgb(100, 18, 18);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 0 0.5rem;
+    max-width: 1200px;
+    
+}
+.navigation ul{
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+}
+.navigation a{
+    text-decoration:none;
+    color: rgb(0, 0, 0);
+}
+.navigation a:hover{
+    
+    color: rgb(164, 145, 145);}
+    hr{
+        opacity: 10px;
+        color: #000;
+    }
+    .jar1{
+        
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        margin: 5rem auto;
+        max-width:1200;
+        height: 100vh;
+    ;
+        
+
+    }
+    .arr{
+        position: absolute;
+        transform: translateX(-3.2rem) translateY(5.5rem);
+    }
+    .botton{
+        display:flex;
+        flex-direction:column;
+        gap:0.6rem;
+        
+    
+       
+
+    }
+    .jarimg{
+        display: flex;
+        margin-top: 20px;
+       
+       justify-content: center;
+       width: 500px;
+    }
+    .botton{
+        text-align: center;
+        margin-top: 15px;
+
+    }
+    .botton.arr{
+        
+        display: block;
+        margin: 10px auto 0 auto;
+        width: 50px;
+
+    }
+    .products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #8b6c6c;
+  padding: 15px;
+  text-align: center;
+  background: #d6c7c7;
+  width: 180px;
+}
+
+#cart {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px solid #5a0404;
+  background: #fafafa;
+  text-align: left;
+}
+a{
+    color:silver;
+    text-decoration: none;
+
+}
+a:hover{
+    color: black;
+}
+h3{
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+
+}
+.thok{
+    text-align: left;
+    size: 52px;
+}
+
+#buy-now-btn {
+  background-color: #771108;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#buy-now-btn:hover {
+  background-color: #ff4b3e;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.product img {
+  width: 120px;   /* حجم موحد لكل الصور */
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.shop-image {
+  width: 100px;   /* صور إضافية أصغر */
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px; /* زغرفة */
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* يخليهن بالوسط */
+  gap: 10px; /* مسافة صغيرة ومتناسقة */
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 160px;   /* عرض ثابت للمنتج */
+}
+
+.product img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.shop-image {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+/* 📱 تنسيق خاص للموبايل */
+@media (max-width: 768px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%; /* يخليها تاخذ عرض الشاشة تقريباً */
+  }
+
+  .shop-image {
+    width: 100px; /* يصغر الصور الإضافية بالموبايل */
+  }
+}
+/* ستايل حسب عدد القطع */
+.details-10 {
+  background-color: #e0f7fa; /* أزرق فاتح */
+  color: #387069;
+  font-weight: bold;
+}
+
+.details-20 {
+  background-color: #bc3e3e; /* برتقالي فاتح */
+  color: #271105;
+  font-weight: bold;
+}
+
+.details-30 {
+  background-color: #fce4ec; /* وردي فاتح */
+  color: #c2185b;
+  font-weight: bold;
+}
+/* جعل كل .details يظهر بشكل مرتب مع أيقونة قبل النص */
+.details {
+  position: relative;
+  font-size: 14px;
+  padding: 6px 10px 6px 30px; /* مسافة لليسار للأيقونة */
+  border-radius: 6px;
+  margin: 8px 0 12px;
+  line-height: 1.5;
+  display: block;
+}
+
+/* إضافة أيقونة حسب السعر */
+.product:nth-child(1) .details::before {
+  content: "⭐"; /* Jar 1 - 10 pieces */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product:nth-child(2) .details::before {
+  content: "⭐"; /* Jar 2 - 20 pieces */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+
+.product:nth-child(3) .details::before {
+  content: "⭐"; /* Jar 3 - 30 pieces */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ألوان الخلفية حسب العدد */
+.product:nth-child(1) .details {
+  background-color: #e0f7fa; /* أزرق فاتح */
+  color: lab(14.78% 33.26 20.89);
+  font-weight: bold;
+}
+
+.product:nth-child(2) .details {
+  background-color: #fff3e0; /* برتقالي فاتح */
+  color: lab(14.78% 33.26 20.89);
+  font-weight: bold;
+}
+
+.product:nth-child(3) .details {
+  background-color: #fce4ec; /* وردي فاتح */
+  color: lab(14.78% 33.26 20.89);
+  font-weight: bold;
+}
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  background: maroon;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+body {
+  font-family: 'Tahoma', sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* حاوية رئيسية */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* الفورم */
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+form h4 {
+  margin-bottom: 10px;
+  color: maroon;
+}
+
+/* الليبل */
+label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #bd0f0f;
+}
+
+/* الحقول */
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  border-color: maroon;
+  box-shadow: 0 0 6px rgba(128,0,0,0.4);
+  outline: none;
+}
+
+/* الزر */
+button {
+  background: maroon;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #a00000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* صورة المعاينة */
+#preview {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+#preview:hover {
+  transform: scale(1.05);
+}
+
+/* رسالة النجاح */
+#success-msg {
+  background: #28a745 !important;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeInScale 0.5s ease;
+}
+
+/* أنيميشن */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInScale {
+  from {opacity: 0; transform: scale(0.8);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+/* تنسيق الجِرار */
+.jar-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.jar-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* زر الكارت */
+.jar-card button {
+  background: maroon;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 10px;
+}
+
+.jar-card button:hover {
+  background: darkred;
+}
+
+/* شبكة عرض الجِرار */
+.jars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.social-links {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: maroon;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  color: darkred;
+  transform: scale(1.05);
+}
+
+.social-links i {
+  font-size: 22px;
+}
+
+}
+
+
+

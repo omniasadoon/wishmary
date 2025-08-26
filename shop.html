@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop - Wishmary</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .shop-image{
+        width: 150px;
+        height: auto;
+    }
+  </style>
+</head>
+<body>
+<div id="gift-message">
+  🎁 Congrats! Since your order is over 60,000 IQD, you get a free jar! 🎁
+</div>
+
+<style>
+  #gift-message {
+    display: none;
+    color: rgb(152, 36, 36);
+    font-weight: bold;
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px dashed rgb(170, 96, 75);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    background: #f0fff0;
+  }
+</style>
+
+<script>
+  let totalPrice = 65000; // Replace with actual cart total
+  if (totalPrice > 60000) {
+    document.getElementById("gift-message").style.display = "block";
+  }
+</script>
+    
+
+  <h3 class="section-title" style="
+  text-align: center; 
+  font-size: 24px; 
+  font-weight: bold; 
+  margin: 20px 0; 
+  background-color: #f0f0f0; /* لون الخلفية */
+  padding: 10px;            /* مسافة داخل الخلفية */
+  border-radius: 8px;       /* حواف مدورة */
+">
+  our jars
+</h3>
+
+  <div class="products">
+    <div class="product">
+        
+      <img src="jar.png" alt="jar1">
+      <p>Mystery Jar Small</p>
+      <p>price: <span class="price">18000</span> IQD</p>
+      <p class ="details"> contains<b>10 pieces</b></p>
+      
+</p>
+
+      <button onclick="addToCart('Mystery Jar Small', 18000)">Add to Cart</button>
+      
+      
+    </div>
+    <div class="product"> 
+      <img src="jar.png" alt="jar2">
+      <p>Mystery Jar Large</p>
+      <p>price: <span class="price">33000</span> IQD</p>
+      <p class ="details"> contains<b>20 pieces</b></p>
+      <button onclick="addToCart('Mystery Jar medium', 33000)">Add to Cart</button>
+      
+    </div>
+    <div class="product"> 
+      <img src="jar.png" alt="jar2">
+      <p>Mystery Jar Large</p>
+      <p>price: <span class="price">49000</span> IQD</p>
+      <p class ="details"> contains<b>30 pieces</b></p>
+      <button onclick="addToCart('Mystery Jar Large', 49000)">Add to Cart</button>
+     
+    </div>
+  </div>
+
+  <!-- 🛒 السلة -->
+  <div id="cart">
+    <h4>🛒 Cart</h4>
+    <ul id="cart-items"></ul>
+    <p>Total: <span id="total">0</span> IQD</p>
+    <p>Delivery: <span id="shipping">5000</span> IQD</p>
+    <p><b>Final total: <span id="final-total">0</span> IQD</b></p>
+
+    <!-- رمز ترويجي -->
+    <input type="text" id="promo" placeholder="Enter coupon code">
+    <button onclick="applyPromo()">apply</button>
+    <p id="promo-msg"></p>
+
+<div id="tiktok-promo" style="border:1px solid #ccc; padding:15px; margin:20px 0; border-radius:8px;">
+  <h3>🎁 get your promo code </h3>
+  <p>تابعنا على تيك توك  لتحصل على رمز خصم عبر الإيميل!</p>
+  <a href="https://www.tiktok.com/@wishmary?_t=ZS-8zC1p29T51E&_r=1" target="_blank">
+    <button>تابعنا على TikTok</button>
+  </a>
+  <br><br>
+  <label> 
+    <input type="email" id="promo-email" placeholder="example@email.com">
+  </label>
+  <button onclick="sendPromo()">احصل على الكود</button>
+  <p id="promo-result" style="color:green; font-weight:bold;"></p>
+</div>
+
+<script>
+function sendPromo(){
+  let email = document.getElementById("promo-email").value;
+  let result = document.getElementById("promo-result");
+  if(email){
+    result.textContent = email+"congratulations! Your promo code is: WISH10";
+    
+    // هنا تقدر تضيف كود إرسال ايميل حقيقي عبر backend لاحقاً
+  } else {
+    result.textContent = "❌ pleas enter your code";
+    result.style.color = "red";
+  }
+}
+</script>
+
+
+
+    <!-- فورم الطلب -->
+    <h3>📦 deliverd information</h3>
+
+    <form id="order-form">
+      <label>Governorate
+        <select ID="province" required onchange="updateShipping()">
+          <option value="">choose</option>
+ <option>Baghdad</option>
+<option>Basra</option>
+<option>Nineveh</option>
+<option>Dhi Qar</option>
+<option>Karbala</option>
+<option>Maysan</option>
+<option>Muthanna</option>
+<option>Qadisiyyah</option>
+<option>Wasit</option>
+<option>Najaf</option>
+<option>Diyala</option>
+<option>Saladin</option>
+<option>Kirkuk</option>
+<option>Erbil</option>
+<option>Sulaymaniyah</option>
+<option>Dohuk</option>
+<option>Anbar</option>
+<option>Babylon</option>
+        </select>
+      </label><br><br>
+      <label>المنطقة: <input type="text" required></label><br><br>
+      <label>نقطة دالة: <input type="text" required></label><br><br>
+      <lable >phone number: <span>+964</span>  <input type="tel" required pattern="[0-9]{9}" maxlength="11" placeholder="xxxxxxxxx"></label>
+      <button type="submit">submit</button>
+    </form><br><br> <hr>
+    <!-- حقل رفع صورة للبنترست -->
+     <div class="thok">
+  <p style="font-size: larger; color: maroon;border: 90px;"  >حتى نكدر نعرف ذوقك اكثر </p>  
+</div>
+
+
+  <label><h4>دزلنا صوره البنترست بورد مالتك</h4><br>
+ <input type="file" id="pinterest-img" accept="image/*" required>
+  </label><br><br>
+    
+  <!-- مكان عرض الصورة -->
+  <img id="preview" style="max-width:200px; display:none; border:1px solid #ccc; margin-top:10px;">
+
+  <br><br>
+  <button type="submit">إرسال الطلب ✅</button>
+</form>
+
+<script>
+  
+  // كود عرض الصورة أول ما يختارها
+
+  document.getElementById("pinterest-img").addEventListener("change", function(event){
+    let file = event.target.files[0];
+    if(file){
+      let reader = new FileReader();
+      reader.onload = function(e){
+        let preview = document.getElementById("preview");
+        preview.src = e.target.result;
+        preview.style.display = "block";
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+   
+<div id="success-msg" style="
+    display:none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #4CAF50;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+">✅ تم إرسال طلبك بنجاح!</div>
+
+
+</div>
+
+  </div>
+
+  
+
+  <br>
+  <script src="shop.js"></script>
+  <a href="wishmary.html">⬅️ back</a></body> </html>
